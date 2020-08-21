@@ -1,0 +1,14 @@
+version: '3.2'
+
+services:
+  first.svm.job:
+    container_name: first.svm.job
+    build:
+      context: .
+      dockerfile: dockerfile
+    volumes:
+      - ./scripts:/usr/src/app/scripts
+    ports:
+      - '8890:8080'
+    environment:
+      - INPUT_DATASET_FILENAME=locations_to_be_labeled.csv
